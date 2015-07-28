@@ -6,6 +6,7 @@
 
 环境要求：PHP     >= 5.4.0
           Laravel >= 4.2.0
+
 1. 在composer.json中添加"jiangxianli/kuaidi":"dev-master".
 
   ```json
@@ -37,6 +38,8 @@
 	),
   ...
   ```
+
+
 3.composer update -VVV
 
 
