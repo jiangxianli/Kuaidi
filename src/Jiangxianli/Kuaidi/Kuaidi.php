@@ -16,6 +16,7 @@ class Kuaidi {
     private $logistic_num;
     private $status = 200 ;
     private $message = '';
+    private $state = -1 ;
 
     public function __construct($company_code,$logistic_num){
 
@@ -59,6 +60,11 @@ class Kuaidi {
         if(is_array($this->data) && array_key_exists('message',$this->data)){
 
             $this->message = $this->data['message'];
+        }
+
+        if(is_array($this->data) && array_key_exists('state',$this->data)){
+
+            $this->state = $this->data['state'];
         }
 
         return $this;
@@ -261,6 +267,39 @@ class Kuaidi {
 
             'zengyisudi' =>'增益速递',
         );
+    }
+
+    /**
+     * 快递状态
+     * @return string
+     */
+    public function getState(){
+        switch($this->state){
+            case '0':
+                return '运送中';
+            case '1':
+                return '已揽件';
+            case '2':
+                return '寄送故障';
+            case '3':
+                return '签收成功';
+            case '4':
+                return '已退签';
+            case '5':
+                return '派件中';
+            case '6':
+                return '退回中';
+            default:
+                return '无';
+
+        }
+//        0：在途，即货物处于运输过程中；
+//        1：揽件，货物已由快递公司揽收并且产生了第一条跟踪信息；
+//        2：疑难，货物寄送过程出了问题；
+//        3：签收，收件人已签收；
+//        4：退签，即货物由于用户拒签、超区等原因退回，而且发件人已经签收；
+//        5：派件，即快递正在进行同城派件；
+//        6：退回，货物正处于退回发件人的途中；
     }
 
 
