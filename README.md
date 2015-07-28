@@ -79,6 +79,9 @@
   
       //㊈最新更新时间 string (Y-m-d H:i:s)
       $latestUpdateTime = $kuaidi->latestUpdateTime();
+
+      //㊉快递状态 string
+      $state = $kuaidi->getState();
   
   
   ```
