@@ -1,47 +1,11 @@
-# Kuaidi for Laravel
+# Kuaidi
 
 目前市场上的快递接口开发程度非常低，此接口封装了快递100的接口方法，不用申请即可免费获取物流信息。
 
 ## 安装
-
-环境要求：PHP     >= 5.4.0
-          Laravel >= 4.2.0
-
-1. 在composer.json中添加"jiangxianli/kuaidi":"dev-master".
-
-  ```json
-  "require": {
-  	  "laravel/framework": "4.2.*",
-  	  "..."
-  	  "jiangxianli/kuaidi": "dev-master"
-  },
-  
-  ```
-
-2. 在app.php中添加'Jiangxianli\Kuaidi\KuaidiServiceProvider'， 并设置别名'Kuaidi'            => 'Jiangxianli\Kuaidis\Kuaidi'
-
-  ```php
-  <?php
-
-  'providers' => array(
-
-		'Illuminate\Foundation\Providers\ArtisanServiceProvider',
-		......
-		'Jiangxianli\Kuaidi\KuaidiServiceProvider',
-
-	),
-  'aliases' => array(
-		'App'               => 'Illuminate\Support\Facades\App',
-		......
-		'Kuaidi'            => 'Jiangxianli\Kuaidis\Kuaidi',
-
-	),
-  ...
-  ```
-
-
-3.composer update -VVV
-
+```shell
+composer require jiangxianli/kuaidi
+```
 
 ## 使用
 
